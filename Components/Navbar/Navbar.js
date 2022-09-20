@@ -27,10 +27,14 @@ export function NavBar(){
 
     <style jsx>{`
     .container{
-        width:100vw;
+    
+        width:100%;
+        background:#f6f6f6;
         display:flex;
         align-items:center;
         justify-content:center;
+        box-shadow:0 1px 9px #000000;
+        
 
     }
     .navigation{

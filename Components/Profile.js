@@ -25,7 +25,20 @@ export function Profile(){
 
             </div>
         </div>
-        <div className="container2">hi</div>
+        <div className="container2">
+            <div className="container2-1">
+                <h1>Profile</h1>
+                <h3>Basic info, for a faster booking experience</h3>
+                <div><label>Name</label>
+                    <input></input></div>
+                <div><label>Birthday</label>
+                    <input></input></div>    
+                <div><label>Gender</label>
+                    <input></input></div>  
+                <div><label>Martial Status</label>
+                    <input></input></div>  
+                </div>
+        </div>
     </div>
     <style jsx>{`
         .container{

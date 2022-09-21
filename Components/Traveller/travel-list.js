@@ -1,3 +1,5 @@
+import travellisticon from '../../styles/icons/travellisticon.png';
+import Image from 'next/image';
 export function TravelList(props){
 
     console.log(props.data.travel);
@@ -9,7 +11,7 @@ export function TravelList(props){
     <div>
     <ul className="travel-item">
         <li className="travel-items">
-        <div className="pax-icon">{traveler.icon}</div>
+        <div className="pax-icon"><Image src={travellisticon} width='25px' height='25px' /></div>
           <div>
             <p className="pax-data">
               <span className="pax-data-item">{traveler.name}</span>

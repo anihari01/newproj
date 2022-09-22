@@ -5,30 +5,35 @@ export default function LeftContainer
 () {
 
     const travellers=[{
+        id:'11',
         name:'Sahil Bhardwaj',
         mobile:'9867452365',
         icon:'icon',
         email:'ghgedcd@gmail.com'
      },
     {
+        id:'12',
         name:'Aniruth Hariharan',
         mobile:'9867452365',
         icon:'icon',
         email:'abfgdtd@gmail.com'
     },
     {
+        id:'13',
         name:'John kelly',
         mobile:'9867452365',
         icon:'icon',
         email:'ab233@gmail.com'
     },
     {
-        name:'Jordan kelly',
+       id:'14', 
+       name:'Jordan kelly',
         mobile:'9867452365',
         icon:'icon',
         email:'abdfsfsdd@gmail.com'
     },
     {
+        id:'15',
         name:'Aniruth Hariharan',
         mobile:'9867452365',
         icon:'icon',

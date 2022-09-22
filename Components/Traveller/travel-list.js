@@ -10,7 +10,7 @@ export function TravelList(props){
    
     <div>
     <ul className="travel-item">
-        <li className="travel-items">
+        <li className="travel-items" key={traveler.id}>
         <div className="pax-icon"><Image src={travellisticon} width='25px' height='25px' /></div>
           <div>
             <p className="pax-data">

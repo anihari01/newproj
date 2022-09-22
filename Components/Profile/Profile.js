@@ -9,38 +9,10 @@ import RightContainer from "./right-container";
 import LeftContainer from "./left-container";
 
 export function Profile() {
- const travellers=[{
-    name:'Sahil Bhardwaj',
-    mobile:'9867452365',
-    icon:'icon',
-    email:'ghgedcd@gmail.com'
- },
-{
-    name:'Aniruth Hariharan',
-    mobile:'9867452365',
-    icon:'icon',
-    email:'abfgdtd@gmail.com'
-},
-{
-    name:'John kelly',
-    mobile:'9867452365',
-    icon:'icon',
-    email:'ab233@gmail.com'
-},
-{
-    name:'Jordan kelly',
-    mobile:'9867452365',
-    icon:'icon',
-    email:'abdfsfsdd@gmail.com'
-},
-{
-    name:'Aniruth Hariharan',
-    mobile:'9867452365',
-    icon:'icon',
-    email:'abfgdtd@gmail.com'
-}
-]
+
  
+
+
  
     return (
     <>

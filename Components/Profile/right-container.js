@@ -5,7 +5,15 @@ import loginicon from '../../styles/icons/loginicon.png';
 import travelicon from '../../styles/icons/travelicon.png';
 import Image from "next/image";
 
+
+
+
 export default function RightContainer() {
+
+
+
+
+  
   return (
     <>
      <div className={classes.container1}>

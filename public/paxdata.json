@@ -1,0 +1,48 @@
+{
+  "nameDetails": {
+    "firstName": "Sommyarup",
+    "middleName": "Ananda",
+    "lastName": "Roy"
+    
+  },
+  "paxEmailId": "sommyarup.roy@somedomain.com",
+  "paxMobileCountryCode": "+91",
+  "paxMobileNo": "9842374578",
+  "gender": "Male",
+  "dob": "1995-01-02",
+ "paxNationality": "Indian",
+ 
+  "passports": [
+    {
+      "passportNo": "Passport number",
+      "nationality": "Nationality sepcified in this passport",
+     "placeOfBirth": "Place of birth as mentioned in the passport",
+      "placeOfIssue": "The place of Issue of the passport",
+      "dateOfIssue": "Date of issue of this passport",
+      "dateOfExpiry": "Date of experity of this passport"
+    }
+  ],
+  "travelDocuemts": [
+    {
+      "documenType": "The Travel Document type Visa,Drivers License,Permanent Residence Card,etc",
+      "documentNumber": "The Travel Document number"
+    }
+  ],
+
+  "flightPreferences": {
+
+    "seatingSectionPosition": "Forward, Middle, rear area etc",
+    "seatInterrowPosition": "Aile, Window, Middle",
+    "cabinType": "economy, business, first class",
+    "mealType": "Prefered meal type Veg,NonVeg,Low Calarorie, etc"
+
+  },
+  "hotelPreferences": {
+  
+    "hotelBed": "bed type prefrence ( queen size, king size, etc",
+    "hotelStar": "preferred hotel start rating (1-5 Star)",
+    "hotelRating": "preferred hotel 3rd party rating"
+  
+  }
+  
+}

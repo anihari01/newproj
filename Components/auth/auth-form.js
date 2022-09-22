@@ -10,6 +10,7 @@ function AuthForm() {
   }
 
   return (
+    <div className={classes.container}>
     <section className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form>
@@ -21,8 +22,8 @@ function AuthForm() {
           <label htmlFor='password'>Your Password</label>
           <input type='password' id='password' required />
         </div>
-        <div className={classes.actions}>
-        <Link href= './profilei'>Login</Link>
+        <div className={classes.actions}><span>
+        <Link href= './profilei' className={classes.btn}>Login</Link></span>
           {/* <button>{isLogin ? 'Login' : 'Create Account'}</button>
           <button
             type='button'
@@ -34,6 +35,7 @@ function AuthForm() {
         </div>
       </form>
     </section>
+    </div>
   );
 }
 

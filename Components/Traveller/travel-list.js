@@ -2,7 +2,7 @@ import travellisticon from '../../styles/icons/travellisticon.png';
 import Image from 'next/image';
 export function TravelList(props){
 
-    console.log(props.data.travel);
+    
     const travels=props.data.travellers.map((traveler)=>{
     
     
@@ -54,6 +54,7 @@ export function TravelList(props){
   }
   .pax-icon {
     margin-right:20px;
+   
     // border:2px solid blue;
   }
   `}</style>

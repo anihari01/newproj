@@ -1,5 +1,5 @@
 import { TravelList } from "./travel-list";
-
+import Link from 'next/link'
 export function Traveller(props) {
     // console.log(props);
     const data=props;
@@ -10,6 +10,7 @@ export function Traveller(props) {
         <div className="heading-section">
           <h1>Save Traveller</h1>
           <h3>Basic info, for a faster booking experience</h3>
+          <Link href='./Travellerform'>Add Traveller Details</Link>
         </div>
         <div><TravelList data={data}/>
          

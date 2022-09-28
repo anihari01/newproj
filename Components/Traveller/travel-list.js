@@ -1,22 +1,45 @@
 import travellisticon from '../../styles/icons/travellisticon.png';
 import Image from 'next/image';
-export function TravelList(props){
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
-    
-    const travels=props.data.travellers.map((traveler)=>{
+export function TravelList(){
+ const [data, Setdata]=useState();
+ const [listdata, SetListdata]=useState([]);
+ const {auth}=useAuthContext();
+ const pax=JSON.parse(auth)
+
+const headerCongif={headers:{firstName:pax.fname,paxId:pax.body}}
+
+const DataFetch =async()=>{
+    try{ const traveldata = await axios.get('https://pax-poc.herokuapp.com/api/v1/get-all-saved-traveller', headerCongif, );
+    Setdata(traveldata);
+    SetListdata(traveldata.data.basicTravellerDetails)}
+    catch(err){
+      console.log(err);
+    }}
+useEffect(()=>{DataFetch()},[])
+
+
+    // console.log(data.data.basicTravellerDetails)
+    // console.log(data)
+    // console.log(listdata)
+    const travels=listdata.map((traveler)=>{
     
     
     return<>
    
     <div>
     <ul className="travel-item">
-        <li className="travel-items" key={traveler.id}>
+        <li className="travel-items" key={traveler.basicTravellerId}>
         <div className="pax-icon"><Image src={travellisticon} width='25px' height='25px' /></div>
           <div>
             <p className="pax-data">
-              <span className="pax-data-item">{traveler.name}</span>
-              <span className="pax-data-item">{traveler.mobile}</span>
-              <span className="pax-data-item">{traveler.email}</span>
+              <span className="pax-data-item">{traveler.firstName} {traveler.middleName} {traveler.lastName}</span>
+              <span className="pax-data-item">{traveler.mobileNumber}</span>
+              <span className="pax-data-item">{traveler.emailId}</span>
+              <span className="pax-data-item">{traveler.documentNumber}</span>
             </p>
           </div> 
           </li>
@@ -43,14 +66,14 @@ export function TravelList(props){
   }
   .pax-data {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-even;
   }
   .pax-data span {
     // border:2px solid red;
     // margin:2px;
   }
   .pax-data-item {
-    width: 200px;
+    margin-right:9px;
   }
   .pax-icon {
     margin-right:20px;
@@ -61,5 +84,19 @@ export function TravelList(props){
      </>
 });
 
-return<>{travels}</>
+return<>
+{travels} 
+{/* <h1>fhnsd<button onClick={DataFetch}>frfrrsfs</button></h1> */}
+</>
+
+
+
 }
+
+// export async function getServerSideProps(context){
+//   const traveldata= await axios.get('https://pax-poc.herokuapp.com/api/v1/get-all-saved-traveller',{header:{firstName:'testname1',paxId:'testpax13'}})
+// return{
+//   props:{traveldata}
+// }
+
+// }

@@ -77,7 +77,8 @@ justify-content: center;
     font-size: medium;
 }
 .control div input{
-  padding: 0.5rem;
+  padding: 0.7rem;
+  font-size: medium;
     margin: 0.25rem;
     border-radius: 10px;
     align-self: flex-end;
@@ -95,6 +96,9 @@ justify-content: center;
 .button1 button{
   margin: 0.6rem;
   padding: 0.8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: medium;
   width: 60%;
   border-radius: 20px;
   background-color: white;

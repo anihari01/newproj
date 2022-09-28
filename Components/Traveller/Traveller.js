@@ -1,9 +1,7 @@
 import { TravelList } from "./travel-list";
 import Link from 'next/link'
-export function Traveller(props) {
-    // console.log(props);
-    const data=props;
-    
+export function Traveller() {
+
   return (
     <>
       <div className="contianer-box">
@@ -12,8 +10,8 @@ export function Traveller(props) {
           <h3>Basic info, for a faster booking experience</h3>
           <Link href='./Travellerform'>Add Traveller Details</Link>
         </div>
-        <div><TravelList data={data}/>
-         
+        <div><TravelList />
+     
         </div>
       </div>
 

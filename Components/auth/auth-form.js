@@ -1,29 +1,100 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
+import AuthContext from '../../pages/context/AuthProvider';
 import classes from './auth-form.module.css';
 import Link from 'next/link'
+//import axios from '../../pages/api/axios';
+import axios from 'axios';
+import { useRouter } from 'next/router';
+const LOGIN_URL = '';
 
-function AuthForm() {
-  const [isLogin, setIsLogin] = useState(true);
+function AuthForm(props) {
+  //console.log(props);
+  const {SetAuth} = useContext(AuthContext);
+  //console.log(props);
+  const inputfnameref = useRef();
+  const inputpassref =useRef();
+  const route = useRouter();
 
-  function switchAuthModeHandler() {
-    setIsLogin((prevState) => !prevState);
+
+  // const [user, setUser] = useState('');
+  //const [pwd, setPwd] = useState('');
+  //const [errMsg, setErrMsg] = useState('');
+  //const [success, setSuccess] = useState(false);
+  //const { setAuth } = useContext(AuthContext);
+
+  /* useEffect(() => {
+    userRef.current.focus();
+}, []) */
+
+// useEffect(() => {
+//     setErrMsg('');
+// }, [user, pwd])
+
+
+ async function handleSubmit(e) {
+    e.preventDefault();
+  //const data= {firstName:'John',password:'johnny'}
+
+  const data= {firstName:inputfnameref.current.value,password:inputpassref.current.value}
+  //console.log(data);
+  try{
+    const response = await axios.post('https://pax-poc.herokuapp.com/api/v1/login', 
+      data
+      );
+      const pax_id = {body:response.data.body,fname:inputfnameref.current.value,status:response.data.status}
+      // setUser({pax_id})
+      //  SetAuth(user)
+      // console.log(response.data)
+      // console.log(props.auth);
+      // console.log(inputfnameref.current.value);
+
+      if(response.data.status === true)
+   {
+    localStorage.setItem('user',JSON.stringify(pax_id))
+    // localStorage.setItem('username',inputfnameref.current.value)
+     route.push('./profilei');
+   }else(
+    route.push('/')
+   )
+  }  catch(err)
+  {
+    console.log(err);
+
   }
+  //console.log(auth);
+  //setUser('');
+  //setPwd('');
+  //setSuccess(true);
+}     
+
+  // const [isLogin, setIsLogin] = useState(true);
+
+  /* function switchAuthModeHandler() {
+    setIsLogin((prevState) => !prevState);
+  }  */
+
+  
 
   return (
+
+
+
     <div className={classes.container}>
     <section className={classes.auth}>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-      <form>
+
+      <form onSubmit={handleSubmit}>
         <div className={classes.control}>
-          <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required />
+          <label htmlFor='fname'>Your Email</label>
+          <input type='text' id='fname' ref={inputfnameref} autoComplete="off"  required />
         </div>
         <div className={classes.control}>
           <label htmlFor='password'>Your Password</label>
-          <input type='password' id='password' required />
+          <input type='password' id='password' ref={inputpassref} required />
         </div>
-        <div className={classes.actions}><span>
-        <Link href= './profilei' className={classes.btn}>Login</Link></span>
+        <div className={classes.actions}>
+          {/* <span>
+        <Link href= './profilei' className={classes.btn}>Login</Link></span> */}
+        <button> Login </button>
           {/* <button>{isLogin ? 'Login' : 'Create Account'}</button>
           <button
             type='button'
@@ -36,6 +107,7 @@ function AuthForm() {
       </form>
     </section>
     </div>
+
   );
 }
 

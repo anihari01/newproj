@@ -10,18 +10,21 @@ import CircularColor from "../../utils/loading";
 
 export default function LeftContainer() {
   const { auth } = useAuthContext();
-  const pax = JSON.parse(auth);
+  
  
 
   const [profiledata, Setprofiledata] = useState();
   const [loading, Setloading] = useState(true);
 
   useEffect(() => {
+   
     FetchProfile();
   }, []);
 
   const FetchProfile = async () => {
     try {
+      const pax = JSON.parse(auth);
+    
       const data = await axios.get(
         "https://pax-poc.herokuapp.com/api/v1/get-pax",
         { headers: { firstName: pax.fname, paxId: pax.body } }
@@ -32,7 +35,8 @@ export default function LeftContainer() {
       console.log(err);
     }
     Setloading(false);
-  };
+  }
+  ;
 
   return (
     <>
@@ -44,7 +48,7 @@ export default function LeftContainer() {
                 {/* <button onClick={FetchProfile}>Fetchhhh</button> */}
                 <h1>Profile</h1>
                 <h3>Basic info, for a faster booking experience</h3>
-                <Link href="./profiledetials">Add profile Details</Link>
+                <Link href="./Profileform">Edit profile Details</Link>
               </div>
               <div className={classes.infosection}>
                 <label>Name</label>
@@ -80,6 +84,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Login Details</h1>
                 <h3>Manage your email address, password and mobile number</h3>
+                <Link href="./Logindetailsform">Edit Login Details</Link>
               </div>
               <div className={classes.infosection}>
                 <label>Mobile No.</label>
@@ -99,6 +104,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Passport Details</h1>
                 <h3></h3>
+                <Link href="./Passportdetailsform">Edit your passport Details</Link>
               </div>
               <div className={classes.infosection}>
                 <label>Passport No.</label>
@@ -146,6 +152,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Travel Documents</h1>
                 <h3>Your travel documents</h3>
+                <Link href="./Traveldocform">Edit your travel Details</Link>
               </div>
               <div className={classes.infosection}>
                 <label>
@@ -166,6 +173,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Flight Preferences</h1>
                 <h3>Your flight preferences</h3>
+                <Link href="./Flightperform">Edit your flight preferences</Link>
               </div>
               <div className={classes.infosection}>
                 <label>Seat Section Position</label>:
@@ -205,6 +213,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Hotel Preferences</h1>
                 <h3>Your hotel preferences</h3>
+                <Link href="./Hotelperform">Edit Hotel preferences</Link>
               </div>
               <div className={classes.infosection}>
                 <label>Hotel Bed</label>:

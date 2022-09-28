@@ -1,5 +1,15 @@
 
+import { useRouter } from "next/router";
+
 export function NavBar(){
+
+    const router = useRouter();
+function LogoutHandler(event){
+    event.preventDefault();
+    console.log('Logout');
+    localStorage.removeItem("user")
+    router.push('/')
+}
 
     return<>
     <div className="container">
@@ -18,7 +28,7 @@ export function NavBar(){
         </div>
         <div>
             <ul className="nav-item">
-                <li className="nav-items">Logout</li>
+                <li className="nav-items" id="btn" onClick={LogoutHandler}>Logout</li>
             </ul>
         </div>
 
@@ -65,6 +75,10 @@ export function NavBar(){
     .nav-items{
     font-weight:bold;      
     }
+#btn{
+    cursor:pointer;
+}
+
     `}</style>
     </>
 }

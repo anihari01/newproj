@@ -52,7 +52,8 @@ function AuthForm(props) {
    {
     localStorage.setItem('user',JSON.stringify(pax_id))
     // localStorage.setItem('username',inputfnameref.current.value)
-     route.push('./profilei');
+     
+    route.push('./profilei');
    }else(
     route.push('/')
    )

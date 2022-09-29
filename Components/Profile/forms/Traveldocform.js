@@ -1,11 +1,40 @@
 import classes from "./Traveldocform.module.css";
-
+import { useRef } from "react";
+import { useAuthContext } from "../../../hooks/useAuthContext";
 function Traveldocform() {
+
+
+  // const { auth } = useAuthContext();
+  // const pax = JSON.parse(auth);
+
+  const inputDoctyperef =useRef();
+  const inputDocnumberref =useRef();
+
+
+  async function formHandler (event) { 
+    event.preventDefault();
+    const formdata={
+      paxID: 'a214e156-5041-47c9-b241-6011f6128392',
+      travelDocuments:[{
+        documentType:inputDoctyperef.current.value,
+        documentNumber:inputDocnumberref.current.value,
+       
+      }]
+    }
+   // try{const response=await axios.put('https://pax-poc.herokuapp.com/api/v1/update-paxdetails',samdata) ;
+// console.log(response)}
+// catch(err){console.log(err);
+//   } 
+    console.log (formdata);
+     
+    
+  } 
+
   return (
     <div className={classes.container}>
       <section className={classes.contact}>
         
-        <form className={classes.form}>
+        <form className={classes.form}  onSubmit={formHandler} >
           <div className={classes.controls}>
             <h1>Traveller details</h1>
              <div className={classes.control}>
@@ -14,7 +43,7 @@ function Traveldocform() {
                 
               </div>
               <div>
-              <select id="hotelBed">
+              <select id="hotelBed" ref={inputDoctyperef}>
                   <option>AADHAR_CARD</option>
                   <option>DRIVING_LICENSE</option>
                   <option>PASSPORT</option>
@@ -26,7 +55,7 @@ function Traveldocform() {
                 <label htmlFor="adhar">Enter Adhar</label>
               </div>
               <div>
-                <input type="text" id="adhar" required />
+                <input type="text" id="adhar" required  ref={inputDocnumberref}/>
               </div>
             </div>
            
@@ -36,7 +65,7 @@ function Traveldocform() {
             </div>
           </div>
         </form>
-      </section>{" "}
+      </section>
     </div>
   );
 }

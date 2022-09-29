@@ -15,7 +15,7 @@ export default function LeftContainer() {
 
   const [profiledata, Setprofiledata] = useState();
   const [loading, Setloading] = useState(true);
-
+  
   useEffect(() => {
    
     FetchProfile();
@@ -29,7 +29,7 @@ export default function LeftContainer() {
         "https://pax-poc.herokuapp.com/api/v1/get-pax",
         { headers: { firstName: pax.fname, paxId: pax.body } }
       );
-      // console.log(data.data);
+      console.log(data.data);
       Setprofiledata(data.data);
     } catch (err) {
       console.log(err);
@@ -80,7 +80,7 @@ export default function LeftContainer() {
               </div>
             </div>
 
-            <div className={classes.contianerbox}>
+            {/* <div className={classes.contianerbox}>
               <div className={classes.headingsection}>
                 <h1>Login Details</h1>
                 <h3>Manage your email address, password and mobile number</h3>
@@ -98,7 +98,7 @@ export default function LeftContainer() {
                 <label>Password</label>
                 <span>Sahil</span>
               </div>
-            </div>
+            </div> */}
             {/* details cointainer */}
             <div className={classes.contianerbox}>
               <div className={classes.headingsection}>

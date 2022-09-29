@@ -48,15 +48,17 @@ function AuthForm(props) {
       // console.log(props.auth);
       // console.log(inputfnameref.current.value);
 
-      if(response.data.status === true)
+      if(response.data.body === "null")
    {
-    localStorage.setItem('user',JSON.stringify(pax_id))
+    localStorage.setItem('user',JSON.stringify(pax_id));
+    route.push('/Profileform');
+    
+   }else{
+    localStorage.setItem('user',JSON.stringify(pax_id));
     // localStorage.setItem('username',inputfnameref.current.value)
      
-    route.push('./profilei');
-   }else(
-    route.push('/')
-   )
+    route.push('./profilei')
+   }
   }  catch(err)
   {
     console.log(err);

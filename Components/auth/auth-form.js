@@ -53,7 +53,10 @@ function AuthForm(props) {
     localStorage.setItem('user',JSON.stringify(pax_id));
     route.push('/Profileform');
     
-   }else{
+    
+   }
+  //  if(response.data.status === false){alert(response.data.body)}
+   else{
     localStorage.setItem('user',JSON.stringify(pax_id));
     // localStorage.setItem('username',inputfnameref.current.value)
      

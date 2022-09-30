@@ -9,7 +9,9 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import CircularColor from "../../utils/loading";
 
 export default function LeftContainer() {
-  const { auth } = useAuthContext();
+  // const { auth } = useAuthContext();
+  
+        
   
  
 
@@ -23,13 +25,14 @@ export default function LeftContainer() {
 
   const FetchProfile = async () => {
     try {
-      const pax = JSON.parse(auth);
-    
+      const user = (localStorage.getItem('user'))
+      const pax= JSON.parse(user);
+    console.log(pax);
       const data = await axios.get(
         "https://pax-poc.herokuapp.com/api/v1/get-pax",
         { headers: { firstName: pax.fname, paxId: pax.body } }
       );
-      console.log(data.data);
+      // console.log(data.data);
       Setprofiledata(data.data);
     } catch (err) {
       console.log(err);
@@ -80,26 +83,6 @@ export default function LeftContainer() {
               </div>
             </div>
 
-            {/* <div className={classes.contianerbox}>
-              <div className={classes.headingsection}>
-                <h1>Login Details</h1>
-                <h3>Manage your email address, password and mobile number</h3>
-                <Link href="./Logindetailsform">Edit Login Details</Link>
-              </div>
-              <div className={classes.infosection}>
-                <label>Mobile No.</label>
-                <span>Sahil</span>
-              </div>
-              <div className={classes.infosection}>
-                <label>Email-id</label>
-                <span>Sahil</span>
-              </div>
-              <div className={classes.infosection}>
-                <label>Password</label>
-                <span>Sahil</span>
-              </div>
-            </div> */}
-            {/* details cointainer */}
             <div className={classes.contianerbox}>
               <div className={classes.headingsection}>
                 <h1>Passport Details</h1>
@@ -250,6 +233,18 @@ export default function LeftContainer() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // export async function getServerSideProps(){
 

@@ -52,7 +52,8 @@ export default function CreatePAX() {
 
     async function formHandler (event) { 
         event.preventDefault();
-        const pax= JSON.parse(auth);
+        const user = (localStorage.getItem('user'))
+        const pax= JSON.parse(user);
         
         // console.log(pax)
         const formdata={
@@ -101,60 +102,16 @@ export default function CreatePAX() {
             }]
             
           }
-        const updatedata={
-            paxId:pax.body,
-            nameDetails: {
-              firstName:inputFnameref.current.value,
-              middleName:inputMnameref.current.value,
-              lastName: inputLnameref.current.value
-              
-            },
-            paxEmailId: inputEmailref.current.value  ,
-            paxMobileNo:inputMobilenoref.current.value  ,
-            gender:inputGenderref.current.value  ,
-            dob:inputDobref.current.value ,
-           paxNationality:inputNationalityref.current.value  ,
-           
-            passports: [
-              {
-                passportNo:inputPassnoref.current.value  ,
-               placeOfBirth:inputPlaceofbirthref.current.value ,
-                placeOfIssue:inputPlaceofiisueref.current.value  ,
-                dateOfIssue:inputDateofissueref.current.value ,
-                dateOfExpiry:inputDateofexpiryref.current.value 
-              }
-            ],
-            travelDocuments: [
-              {
-                documentType:inputDoctyperef.current.value  ,
-                documentNumber: inputDocnumberref.current.value 
-              }
-            ],
-          
-            flightPreferences:[ {
-          
-              seatingSectionPosition:inputSeatsecref.current.value,
-              seatInterRowPosition:inputRowposref.current.value,
-              seatType:inputSeattyperef.current.value,
-              mealType: inputmealref.current.value 
-          
-            }],
-            hotelPreferences: [{
-            
-              hotelBed:inputBedtyperef.current.value  ,
-              hotelStar: inputHotelstartyperef.current.value ,
-              hotelRating: inputLHotelratingref.current.value 
-            }]
-            
-          }
+        
 
           if (pax.body === "null") {
             try{
                 const response= await axios.post('https://pax-poc.herokuapp.com/api/v1/create-pax' ,formdata);  
-            // console.log(response.data) 
+            console.log(response.data) 
              
             // console.log(response);
-            const pax_id = {body:response.data.body,fname:inputFnameref.current.value,status:response.data.status}
+            const pax_id = {body:response.data.body,fname:pax.fname,status:response.data.status};
+            console.log(pax_id);
             localStorage.setItem('user',JSON.stringify(pax_id));
             route.push('./profilei')
         
@@ -165,8 +122,10 @@ export default function CreatePAX() {
     }
     else{
         try{
-            const response= await axios.put('https://pax-poc.herokuapp.com/api/v1/update-paxdetails',updatedata);  
-            console.log(response.data)
+            const response= await axios.put('https://pax-poc.herokuapp.com/api/v1/update-paxdetails',formdata,{headers:{paxId:pax.body}});  
+            
+            route.push('./profilei')
+
         }catch(err){console.log(err)
     }
 }
@@ -225,7 +184,7 @@ export default function CreatePAX() {
                 <label htmlFor="email">Email</label>
               </div>
               <div>
-                <input type="text" id="email" required ref={inputEmailref}/>
+                <input type="text" id="email" d ref={inputEmailref}/>
               </div>
             </div>
             <div className='control'>
@@ -234,7 +193,7 @@ export default function CreatePAX() {
               </div>
               <div>
                 
-                <input type="text" id="mobileno" required ref={inputMobilenoref} />
+                <input type="text" id="mobileno"  ref={inputMobilenoref} />
               </div>
             </div>
             <div className='control'>
@@ -254,7 +213,7 @@ export default function CreatePAX() {
                 <label htmlFor="dob">Date of Birth</label>
               </div>
               <div>
-                <input type="date" id="dob" require ref={inputDobref}/>
+                <input type="date" id="dob"  ref={inputDobref}/>
               </div>
             </div>
             <div className='control'>
@@ -263,7 +222,7 @@ export default function CreatePAX() {
                 <label htmlFor="nationality">Nationality</label>
               </div>
               <div>
-                <input type="text" id="nationality" required ref={inputNationalityref} />
+                <input type="text" id="nationality"  ref={inputNationalityref} />
               </div>
             </div>
             </div>
@@ -275,7 +234,7 @@ export default function CreatePAX() {
                 <label htmlFor="passportno">Passport NUmber</label>
               </div>{" "}
               <div>
-                <input type="text" id="passportno" required ref={inputPassnoref} />
+                <input type="text" id="passportno"  ref={inputPassnoref} />
               </div>{" "}
             </div>
             <div className='control'>
@@ -283,7 +242,7 @@ export default function CreatePAX() {
                 <label htmlFor="placeofbirth">Place of Birth</label>
               </div>{" "}
               <div>
-                <input type="text" id="placeofbirth" required ref={inputPlaceofbirthref}/>
+                <input type="text" id="placeofbirth"  ref={inputPlaceofbirthref}/>
               </div>{" "}
             </div>
             <div className='control'>
@@ -291,7 +250,7 @@ export default function CreatePAX() {
                 <label htmlFor="placeofissue">Place of Issue</label>
               </div>{" "}
               <div>
-                <input type="text" id="placeofissue" required ref={inputPlaceofiisueref}/>
+                <input type="text" id="placeofissue"  ref={inputPlaceofiisueref}/>
               </div>{" "}
             </div>
             <div className='control'>
@@ -299,7 +258,7 @@ export default function CreatePAX() {
                 <label htmlFor="dateofissue">Date of Issue</label>
               </div>
               <div>
-                <input type="date" id="dateofissue" required ref={inputDateofissueref} />
+                <input type="date" id="dateofissue"  ref={inputDateofissueref} />
               </div>
             </div>
             <div className='control'>
@@ -308,7 +267,7 @@ export default function CreatePAX() {
                 <label htmlFor="dateofexpiry">Date of Expiry</label>
               </div>
               <div>
-                <input type="date" id="dateofexpiry" required  ref={inputDateofexpiryref} />
+                <input type="date" id="dateofexpiry"   ref={inputDateofexpiryref} />
               </div>
             </div>
             </div>
@@ -333,7 +292,7 @@ export default function CreatePAX() {
                 <label htmlFor="adhar">Enter Adhar</label>
               </div>
               <div>
-                <input type="text" id="adhar" required ref={inputDocnumberref} />
+                <input type="text" id="adhar"  ref={inputDocnumberref} />
               </div>
             </div>
            

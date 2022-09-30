@@ -15,8 +15,8 @@ function Travellerform() {
   const inputDocumentnumberref =useRef();
 
     const router=useRouter();
-    const {auth}=useAuthContext();
-    const pax=JSON.parse(auth)
+    const user = (localStorage.getItem('user'))
+    const pax=JSON.parse(user)
   const Postdatfun=async(formdata)=>{
   const axiosConfig={headers:{firstName:pax.fname,paxId:pax.body,}}
   try{

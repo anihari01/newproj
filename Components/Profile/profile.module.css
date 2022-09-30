@@ -1,8 +1,14 @@
 .container {
-    margin-top: 12px;
+    /* margin-top: 12px; */
     padding-top: 6rem;
     display: flex;
-    background: #f6f6f6;
+    /* background: #f6f6f6; */
+    background-image: url('../../styles/images/benjamin-voros-jv15x2Gs5F8-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
     height: 100%;
     width: 100%;
     justify-content: space-between;

@@ -51,7 +51,7 @@ export default function LeftContainer() {
                 {/* <button onClick={FetchProfile}>Fetchhhh</button> */}
                 <h1>Profile</h1>
                 <h3>Basic info, for a faster booking experience</h3>
-                <Link href="./Profileform">Edit profile Details</Link>
+                <Link href="./Profileform" ><span className={classes.linkref}>Edit profile Details</span></Link>
               </div>
               <div className={classes.infosection}>
                 <label>Name</label>
@@ -87,7 +87,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Passport Details</h1>
                 <h3></h3>
-                <Link href="./Passportdetailsform">Edit your passport Details</Link>
+              
               </div>
               <div className={classes.infosection}>
                 <label>Passport No.</label>
@@ -135,7 +135,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Travel Documents</h1>
                 <h3>Your travel documents</h3>
-                <Link href="./Traveldocform">Edit your travel Details</Link>
+              
               </div>
               <div className={classes.infosection}>
                 <label>
@@ -156,7 +156,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Flight Preferences</h1>
                 <h3>Your flight preferences</h3>
-                <Link href="./Flightperform">Edit your flight preferences</Link>
+          
               </div>
               <div className={classes.infosection}>
                 <label>Seat Section Position</label>:
@@ -196,7 +196,7 @@ export default function LeftContainer() {
               <div className={classes.headingsection}>
                 <h1>Hotel Preferences</h1>
                 <h3>Your hotel preferences</h3>
-                <Link href="./Hotelperform">Edit Hotel preferences</Link>
+                
               </div>
               <div className={classes.infosection}>
                 <label>Hotel Bed</label>:
@@ -231,7 +231,7 @@ export default function LeftContainer() {
         <div className={classes.loading}><CircularColor color='grey'/></div>
       )}
     </>
-  );
+  )
 }
 
 

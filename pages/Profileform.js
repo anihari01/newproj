@@ -8,5 +8,5 @@ export default function TravellerForm()
 {
     return(
     // <Profileform /> 
-    <CreatePAX/ >);
+    <CreatePAX/ >)
 }

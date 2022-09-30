@@ -30,7 +30,6 @@ export default function RightContainer() {
                 <div className={classes.listitem2}><a>Save Travellers</a></div></li>
               </ul>
             </div>
-          
           </div>
         </div>
     </>

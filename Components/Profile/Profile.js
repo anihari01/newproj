@@ -20,7 +20,6 @@ export function Profile() {
         <RightContainer/>
         <LeftContainer/>
         </div>
-      
     </>
-  );
+  )
 }

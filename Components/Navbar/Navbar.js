@@ -39,11 +39,12 @@ function LogoutHandler(event){
     .container{
     
         width:100%;
-        background:#f6f6f6;
+        background:#77707bd9;
         display:flex;
         align-items:center;
         justify-content:center;
-        box-shadow:0 1px 9px #000000;
+        // box-shadow:0 1px 9px #000000;
+        position:fixed;
         
 
     }

@@ -150,7 +150,7 @@ export default function CreatePAX() {
     return (
     <>
       <div className="contianer">
-      <h1>Welcome to Neu TRavEL !!</h1>
+      <h1 style={{color:'#e9e3e3'}}>Welcome to Neu TRavEL !!</h1>
         <form className="form" onSubmit={formHandler}>
             <div className="controls-container">
           <div className='controls'>
@@ -426,7 +426,11 @@ export default function CreatePAX() {
 
 .contianer{
     border: 1px solid black;
-    background-color: #f6f6f6;
+    // background-color: #f6f6f6;
+    background-image: url('https://images.unsplash.com/photo-1476900543704-4312b78632f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     padding:20px;
 }
 
@@ -449,7 +453,7 @@ flex-direction:column;
  flex-direction: column;
  justify-content: center;  
  align-items: center;
- background:#f6f6f6;
+ background:#f6f6f682;
  border-radius:8px;
 //  box-shadow:0 1px 9px #000000;
  
@@ -486,15 +490,17 @@ input{
     border-radius:10px;
     font-size:15px;
     outline:none;
+    background: #f6f6f682;
 }
 .dropdown{
     padding:0.4rem;
     // padding-left:0.3rem;
     // padding-right:0.3rem;
     font-weight:500;
-    border: 2px solid blue;
+    // border: 2px solid blue;
     border-radius:10px;
     width:200px;
+    background: #f6f6f682;
 }
 .dropdown option {
     padding:0.4rem;
@@ -516,6 +522,7 @@ button {
     font-size:15px;
     border-radius:10px;
     outline:none;
+    background: #f6f6f682;
 }
 button:hover{
     background-color:black;

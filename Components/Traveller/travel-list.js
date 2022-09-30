@@ -8,7 +8,7 @@ export function TravelList(){
   const user = (localStorage.getItem('user'))
  const [data, Setdata]=useState();
  const [listdata, SetListdata]=useState([]);
- const {auth}=useAuthContext();
+//  const {auth}=useAuthContext();
  const pax=JSON.parse(user)
 
 const headerCongif={headers:{firstName:pax.fname,paxId:pax.body}}

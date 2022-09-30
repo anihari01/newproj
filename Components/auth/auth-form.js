@@ -55,7 +55,7 @@ function AuthForm(props) {
     
     
    }
-  //  if(response.data.status === false){alert(response.data.body)}
+   if(response.data.status === false){alert(response.data.body)}
    else{
     localStorage.setItem('user',JSON.stringify(pax_id));
     // localStorage.setItem('username',inputfnameref.current.value)
@@ -67,19 +67,7 @@ function AuthForm(props) {
     console.log(err);
 
   }
-  //console.log(auth);
-  //setUser('');
-  //setPwd('');
-  //setSuccess(true);
-}     
-
-  // const [isLogin, setIsLogin] = useState(true);
-
-  /* function switchAuthModeHandler() {
-    setIsLogin((prevState) => !prevState);
-  }  */
-
-  
+ }
 
   return (
 
@@ -88,9 +76,10 @@ function AuthForm(props) {
     <div className={classes.container}>
     <section className={classes.auth}>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
+        <h1 className={classes.heading}>Login into Neu TRavEL!</h1>
         <div className={classes.control}>
-          <label htmlFor='fname'>Your Email</label>
+          <label htmlFor='fname'>Your Username</label>
           <input type='text' id='fname' ref={inputfnameref} autoComplete="off"  required />
         </div>
         <div className={classes.control}>
@@ -98,23 +87,15 @@ function AuthForm(props) {
           <input type='password' id='password' ref={inputpassref} required />
         </div>
         <div className={classes.actions}>
-          {/* <span>
-        <Link href= './profilei' className={classes.btn}>Login</Link></span> */}
-        <button> Login </button>
-          {/* <button>{isLogin ? 'Login' : 'Create Account'}</button>
-          <button
-            type='button'
-            className={classes.toggle}
-            onClick={switchAuthModeHandler}
-          >
-            {isLogin ? 'Create new account' : 'Login with existing account'}
-          </button> */}
+         
+        <button className={classes.btn}> Login </button>
+          
         </div>
       </form>
     </section>
     </div>
 
-  );
+  )
 }
 
 export default AuthForm;

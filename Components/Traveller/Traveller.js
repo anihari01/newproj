@@ -11,7 +11,6 @@ export function Traveller() {
           <Link href='./Travellerform'>Add Traveller Details</Link>
         </div>
         <div><TravelList />
-     
         </div>
       </div>
 
@@ -21,7 +20,7 @@ export function Traveller() {
       .contianer-box {
         display: flex;
         flex-direction: column;
-        background: white;
+        background: #ffffff4d;
         border: 1px solid black;
         margin-bottom: 1.5rem;
         border-radius: 20px;

@@ -3,7 +3,13 @@
   align-items: center;
   justify-content: center;
   height:100vh;
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
+  background-image:url('../../styles/images/charles-postiaux-mEBG2Jee81U-unsplash.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   
 }
 
@@ -14,18 +20,19 @@
   width: 95%;
   max-width: 25rem;
   border-radius: 6px;
-  background-color: #e4e3e3;
+  background-color: #e4e3e378;
   box-shadow:0 2px 9px #000000;;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   text-align: center;
   height: 60%;
+
 }
 
 .auth h1 {
   text-align: center;
   color: black;
-  padding-top:6rem;
+  padding-top:1rem;
   font-size:x-large;
 }
 
@@ -42,64 +49,63 @@
 }
 
 .control input {
-  font: inherit;
-  background-color: white;
+  /* font: inherit; */
+  background-color: #f6f6f6ab;
   color: black;
   border-radius: 4px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   width: 100%;
   text-align: left;
   padding: 0.5rem;
 }
-.control input :hover{
-  outline-color:black ;
+.control input:hover{
+  outline-color:none ;
 }
 
-.actions {
-  margin-top: 1.5rem;
+
+/* .actions { */
+
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* cursor: pointer; */
+  /* font: inherit; */
+  /* color: white; */
+ 
+  /* border: 1px solid  #3c393e; */
+
+
+/* } */
+
+
+
+
+/* } */
+.btn {
+    margin-top: 1.5rem;
   height: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
   cursor: pointer;
+    padding: 0.5rem 2.5rem;
+     background-color:#dcdcdc85;
+       border-radius: 4px;
+       outline: none;
   font: inherit;
-  color: white;
-  background-color:gainsboro;
-  border: 1px solid  #3c393e;
-  border-radius: 4px;
-  padding: 0.5rem 2.5rem;
+  color: rgb(15, 10, 10);
+  /* background-color: #9f5ccc; */
+  /* border: 1px solid #9f5ccc; */
+  /* border-radius: 4px; */
+  /* padding: 0.5rem 2.5rem; */
 }
 
-.btn{
- /* font-weight: bolder; */
- color: white;
-
-
-}
-.actions button {
-  /* cursor: pointer;
-  font: inherit;
-  color: white;
-  background-color: #9f5ccc;
-  border: 1px solid #9f5ccc;
-  border-radius: 4px;
-  padding: 0.5rem 2.5rem; */
-}
-
-.actions button:hover {
-  background-color: white;
+.btn:hover {
+  background-color: black;
   border-color: white;
+  color: white;
 }
 
-.actions .toggle {
-  margin-top: 1rem;
-  background-color: transparent;
-  color: #f1e1fc;
-  border: none;
-  padding: 0.15rem 1.5rem;
-}
 
-.actions .toggle:hover {
-  background-color: transparent;
-  color: #f1e1fc;
-}
+
+/* .heading{
+  padding-top: 0px;
+} */
